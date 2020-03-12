@@ -23,15 +23,18 @@ hypothesis(not_found).
 
 rachel :- woman,
           parent,
-          blond.
+          main,
+          emmas_parent.
 
 monica :- woman,
           married,
+          main,
           brunet.
 
 phoebe :- woman,
          singer,
-         parent,
+         triplets,
+         main,
          blond.
 
 carol :- woman,
@@ -47,27 +50,32 @@ suzan :- woman,
 ross :- man,
        parent,
        professor,
+       main,
+       emmas_parent,
        brunet.
 
 joey :- man,
        actor,
+       main,
        brunet.
 
 chandler :- man,
        married,
+       main,
        brunet.
 
 ben :- kid,
-      man,
+      boy,
       blond.
 
 emma :- kid,
-      woman,
+      girl,
       blond.
 
 janice :- woman,
           dated,
           parent,
+          married,
           brunet.
 
 
@@ -75,6 +83,8 @@ janice :- woman,
 
 woman :- verify('a woman'), !.
 man :- verify('a man'), !.
+boy :- verify('a boy'), !.
+girl :- verify('a girl'), !.
 blond :- verify('blond').
 brunet :- verify('brunet').
 parent :- verify('parent').
