@@ -1,2 +1,2 @@
 # akinator
-This is an akinator game developed using Prolog. To start a new game, just type `go`.
+This is an akinator game for the TV show friends. It was developed using Prolog. To start a new game, just type `go`.
