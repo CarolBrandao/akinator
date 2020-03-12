@@ -7,13 +7,15 @@ go :- hypothesis(Character),
  /* hypotheses to be tested */ 
 hypothesis(rachel)  :- rachel, !.
 hypothesis(monica)  :- monica, !.
-hypothesis(phebe)  :- phebe, !.
+hypothesis(phoebe)  :- phoebe, !.
 hypothesis(carol)  :- carol, !.
+hypothesis(suzan)  :- suzan, !.
 hypothesis(ross)  :- ross, !.
 hypothesis(joey)  :- joey, !.
 hypothesis(chandler)  :- chandler, !.
 hypothesis(emma)  :- emma, !.
 hypothesis(ben)  :- ben, !.
+hypothesis(janice) :- janice, !.
 
 hypothesis(not_found).
 
@@ -27,7 +29,7 @@ monica :- woman,
           married,
           brunet.
 
-phebe :- woman,
+phoebe :- woman,
          singer,
          parent,
          blond.
@@ -38,8 +40,9 @@ carol :- woman,
          blond.
 
 suzan :- woman,
-         parent,
-         lesbian.
+         lesbian,
+         step_parent,
+         carol_wife.
 
 ross :- man,
        parent,
@@ -62,6 +65,11 @@ emma :- kid,
       woman,
       blond.
 
+janice :- woman,
+          dated,
+          parent,
+          brunet.
+
 
 /* classification rules */ 
 
@@ -75,7 +83,13 @@ singer :- verify('a singer').
 professor :- verify('a professor').
 actor :- verify('an actor').
 lesbian :- verify('a lesbian').
-kid :- verify('a kid').
+kid :- verify('a kid'), !.
+dated :- verify('a person that dated someone of the 6 main characters at some point').
+main :- verify('one of the 6 main characters').
+emmas_parent :- verify('emmas parent').
+triplets :- verify('a person that had triplets').
+carol_wife :- verify('carols wife').
+step_parent:- verify('step parent').
 
 /* questions */ 
 ask(Question) :-
